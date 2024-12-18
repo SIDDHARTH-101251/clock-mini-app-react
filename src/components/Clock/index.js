@@ -8,6 +8,11 @@ const Clock = () => {
     const timerID = setInterval(() => {
       setDate(new Date())
     }, 1000)
+
+    return () => {
+      clearInterval(timerID)
+      console.log('Effect Unmounted')
+    }
   }, [])
   return (
     <ClockContainer>
